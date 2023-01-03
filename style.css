@@ -1,9 +1,35 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
+html {
+    /* 62.5% of 16px browser font size is 10px */
+    font-size: 62.5%;
+}
+
 body {
-    height:100vh;
     margin: 0;
+}
+
+p {
+    /* 1.5rem equals to 15px*/
+    font-size: 1.5rem;
+}
+
+.sr-only {
+    position: absolute;
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.main {
+    min-height:100vh;
     background-color: hsl(212, 45%, 89%);
     display: grid;
     grid-template-rows: 9fr 1fr;
@@ -15,7 +41,7 @@ body {
 .box {
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    max-width: 80vw;
     background-color: hsl(0, 0%, 100%);
     border-radius: 5%;
     margin: 50px auto;
@@ -39,20 +65,19 @@ body {
 
 .text__description {
     font-weight: 400;
-    font-size: 15px;
     color: hsl(220, 15%, 55%);
 }
 
 
 @media screen and (min-width: 375px) {
     .box{
-        width: 90vw;
+        max-width: 80vw;
     }
 }
 
 @media screen and (min-width: 1440px){
     .box {
-        width: 25vw;
+        max-width: 25vw;
     }
 }
 
